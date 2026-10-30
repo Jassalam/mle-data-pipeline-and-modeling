@@ -80,7 +80,7 @@ def data_ingestion(table_name, url, file_path, user, password, host, port, db):
         raise click.UsageError("--file_path is required")
 
     parquet_path = download_file(url, Path(file_path))
-    engine = create_engine(f"postgresql://{user}:{password}@{host}:{port}/{db}")
+    engine = create_engine(f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{db}")
 
     with engine.connect() as connection:
         connection.execute(text("SELECT 1"))

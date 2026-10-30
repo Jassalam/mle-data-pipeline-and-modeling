@@ -153,7 +153,7 @@ These are the values used throughout the rest of the project:
 The notebook in the next step uses this connection string:
 
 ```text
-postgresql://postgres:postgres@localhost:5432/ny_taxi
+postgresql+psycopg2://postgres:postgres@localhost:5432/ny_taxi
 ```
 
 ## Troubleshooting
